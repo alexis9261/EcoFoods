@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link d-inline" href="contact-us.php#contactForm"><i id="enlaceFormCorreo" class="far fa-envelope text-white"></i>CUSTOMERSERVICES@ECOFOODSSERVICES.COM</a>
+          <a class="nav-link d-inline" href="contact-us.php#contactForm"><i id="enlaceFormCorreo" class="far fa-envelope text-white"></i>SALES@ECOFOODSSERVICES.COM</a>
         </li>
         <li class="nav-item">
           <a class="mr-3 text-white" href="https://www.instagram.com/ecofoodsus/" target="_blank" id="enlaceNavabarRed">

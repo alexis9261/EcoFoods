@@ -33,7 +33,7 @@
               <i class="fas fa-phone"></i> +1 987 654 3210
             </li-->
             <li>
-              <i class="far fa-envelope"></i> <a class="text-white" href="contact-us.php#contactForm">customerservices@ecofoodsservices.com</a>
+              <i class="far fa-envelope"></i> <a class="text-white" href="contact-us.php#contactForm">sales@ecofoodsservices.com</a>
             </li>
           </ul>
         </div>

@@ -56,7 +56,7 @@
 								Write us
 							</h4>
 							<p class="section_contact__info__item__content">
-								<a href="#contactForm">customerservices@ecofoodsservices.com</a>
+								<a href="#contactForm">sales@ecofoodsservices.com</a>
 							</p>
 						</div>
 						<!--div class="section_contact__info__item">

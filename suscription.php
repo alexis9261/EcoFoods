@@ -12,7 +12,7 @@
 
      
     $mensaje = "Email: $visitor_email ---- Mensaje: $visitor_message";
-    $recipient = "customerservices@ecofoodsservices.com";
+    $recipient = "sales@ecofoodsservices.com";
      
     $headers  = 'MIME-Version: 1.0' . "\r\n"
     .'Content-type: text/html; charset=utf-8' . "\r\n"
