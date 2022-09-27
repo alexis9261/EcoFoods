@@ -17,6 +17,14 @@
   <!-- build:css assets/css/theme.min.css -->
   <link rel="stylesheet" href=" assets/css/theme.css">
   <!-- endbuild -->
+  <!-- Recaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+   function onSubmit(token) {
+     document.getElementById("form_contact").submit();
+   }
+  </script>
+  <!-- Recaptcha -->
 </head>
 <body>
 
@@ -205,9 +213,10 @@
                         <input type="email" id="email" name="email" class="required email form-control" placeholder="Ingresa tu correo" required>
                       </div>
                       <div class="clear col-md-3 text-center">
-                        <button type="submit" class="btn btn-primary">
-                          Suscribirse
-                        </button>
+                      <button class="btn btn-primary g-recaptcha" 
+                  data-sitekey="6LdtCCshAAAAAE-1y0EWa3NqlCxfvMM7tn5Gk_mJ" 
+                  data-callback='onSubmit' 
+                  data-action='submit'>Suscribirse</button>
                       </div>
                     </div>
                   </form>

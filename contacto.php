@@ -17,6 +17,23 @@
   <!-- build:css assets/css/theme.min.css -->
   <link rel="stylesheet" href="assets/css/theme.css">
   <!-- endbuild -->
+
+  <!-- Recaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdtCCshAAAAAE-1y0EWa3NqlCxfvMM7tn5Gk_mJ"></script>
+  <script>
+	document.addEventListener("DOMContentLoaded", () => {
+		$('#enviar').click(function(e){
+			e.preventDefault();
+			grecaptcha.ready(function() {
+				grecaptcha.execute('6LdtCCshAAAAAE-1y0EWa3NqlCxfvMM7tn5Gk_mJ', {action: 'submit'}).then(function(token) {
+					$('#form_contact').prepend('<input type="hidden" name="token" value="'+ token +'">');
+					$('#form_contact').submit();
+				});
+			});
+		})
+	})
+  </script>
+  <!-- Recaptcha -->
 </head>
 <body>
   <?php include('common/navbarSpain.php'); ?>
@@ -101,7 +118,7 @@
 				</div>
 				<div class="col-md-9 order-md-1">
 					<!-- Contact form -->
-          <form class="section_contact__form" action="send_message.php" method="get">
+          			<form class="section_contact__form" action="send_message.php" method="get" id="form_contact">
 						<div class="form-group">
 							<label for="contact__form__name" class="sr-only">Nombre Completo</label>
 							<input type="text" class="form-control" name="name" placeholder="Tu nombre" required autofocus>
@@ -112,7 +129,7 @@
 							<input type="email" class="form-control" name="email" placeholder="Coloca el correo" required>
 							<div class="invalid-feedback"></div>
 						</div>
-            <div class="form-group">
+            			<div class="form-group">
 							<label for="contact__form__email" class="sr-only">Número Telefónico</label>
 							<input type="tel" class="form-control" name="phone" placeholder="Ingrese su número telefónico" required>
 							<div class="invalid-feedback"></div>
@@ -122,9 +139,14 @@
 							<textarea class="form-control"  name="message" rows="9" placeholder="Mensaje" required></textarea>
 							<div class="invalid-feedback"></div>
 						</div>
-						<button type="submit" class="btn btn-primary">
-							Enviar Mensaje
-						</button>
+						<!-- <button type="submit" class="btn btn-primary">
+						Enviar Mensaje
+						</button> -->
+						<button class="btn btn-primary g-recaptcha" 
+						data-sitekey="6LdtCCshAAAAAE-1y0EWa3NqlCxfvMM7tn5Gk_mJ" 
+						data-callback='onSubmit' 
+						data-action='submit'
+						id="enviar">Enviar Mensaje</button>
 					</form>
 				</div>
 			</div>

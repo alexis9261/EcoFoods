@@ -17,14 +17,24 @@
     $headers  = 'MIME-Version: 1.0' . "\r\n"
     .'Content-type: text/html; charset=utf-8' . "\r\n"
     .'From: ' . $visitor_email . "\r\n";
-     
-    if(mail($recipient, $email_title, $mensaje, $headers)) {
-        $respuesta=1;
-        header("Location: index.php?m=$respuesta");
-    } else {
-        $respuesta=0;
-        header("Location: index.php?m=$respuesta");
+
+    if(
+        strpos($_GET['email'], '</a>') || 
+        strpos($_GET['email'], '</') ||
+        strpos($_GET['email'], 'http') ||
+        strpos($_GET['email'], 'д')
+    ){
+        $respuesta=0;    
+    }else{
+
+        if(mail($recipient, $email_title, $mensaje, $headers)) {
+            $respuesta=1;
+        } else {
+            $respuesta=0;
+        }
     }
+        
+    header("Location: index.php?m=$respuesta");
 
  
 ?>

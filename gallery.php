@@ -17,6 +17,14 @@
   <!-- build:css assets/css/theme.min.css -->
   <link rel="stylesheet" href="assets/css/theme.css">
   <!-- endbuild -->
+  <!-- Recaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+   function onSubmit(token) {
+     document.getElementById("form_contact").submit();
+   }
+  </script>
+  <!-- Recaptcha -->
 </head>
   <body>
 	<?php include('common/navbarEnglish.php'); ?>
@@ -202,9 +210,13 @@
 									<input type="email" name="email" class="required email form-control" placeholder="Email address" required>
 								</div>
 								<div class="clear col-md-3 text-center">
-									<button type="submit" class="btn btn-primary">
+								<button class="btn btn-primary g-recaptcha" 
+								data-sitekey="6LdtCCshAAAAAE-1y0EWa3NqlCxfvMM7tn5Gk_mJ" 
+								data-callback='onSubmit' 
+								data-action='submit'>Subscribe</button>
+									<!-- <button type="submit" class="btn btn-primary">
 										Subscribe
-									</button>
+									</button> -->
 								</div>
 							</div>
 						</form>

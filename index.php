@@ -34,6 +34,16 @@
   <!-- endbuild -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2@7.29.0/dist/sweetalert2.all.min.js'></script>
+
+  <!-- Recaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+   function onSubmit(token) {
+     document.getElementById("form_contact").submit();
+   }
+  </script>
+  <!-- Recaptcha -->
+
 </head>
 <body style="margin-bottom:0!important;padding-bottom:0!important;">
   <?php include('common/navbarEnglish.php'); ?>
@@ -332,9 +342,13 @@
                   <input type="email" name="email" class="required email form-control" placeholder="Email address" required>
                 </div>
                 <div class="clear col-md-3 text-center">
-                  <button type="submit" class="btn btn-primary">
+                  <!-- <button type="submit" class="btn btn-primary">
                     Subscribe
-                  </button>
+                  </button> -->
+                  <button class="btn btn-primary g-recaptcha" 
+                  data-sitekey="6LdtCCshAAAAAE-1y0EWa3NqlCxfvMM7tn5Gk_mJ" 
+                  data-callback='onSubmit' 
+                  data-action='submit'>Subscribe</button>
                 </div>
               </div>
             </form>
